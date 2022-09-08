@@ -1,1 +1,1 @@
-Project 0x00. C - Hello, World
+script that compiles a C file but does not link

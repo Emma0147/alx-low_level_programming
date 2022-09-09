@@ -1,1 +1,1 @@
-program will assign a random number to the variable
+prints the alphabet in lowercase, followed by a new line

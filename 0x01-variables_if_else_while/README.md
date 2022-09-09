@@ -1,1 +1,1 @@
-assign a random number to the variable 
+program will assign a random number to the variable

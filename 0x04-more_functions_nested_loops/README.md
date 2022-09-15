@@ -1,1 +1,1 @@
-prints a square, followed by a new line
+prints a triangle, followed by a new line

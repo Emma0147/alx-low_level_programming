@@ -1,1 +1,1 @@
-function that adds two numbers
+Write a function that prints a buffer

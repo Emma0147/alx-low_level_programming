@@ -6,7 +6,7 @@
  * @c: character string pointer
  * Return: char pointer
  */
-char *rot13(char *)
+char *rot13(const char *src)
 {
 	int i, j;
 	char rot_13[] =

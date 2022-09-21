@@ -6,10 +6,11 @@
  * @c: character string pointer
  * Return: char pointer
  */
-char *rot13(char *c)
+char *rot13(char *)
 {
 	int i, j;
-	"NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm",
+	char rot_13[] =
+		"NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm",
 		alphabet[] = 
 			"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 

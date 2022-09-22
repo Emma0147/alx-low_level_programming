@@ -1,27 +1,31 @@
 #include "main.h"
 
 /**
- * rot13 - encrypts code
- * @s: string to encrypt
- * Return: char value
+ * rot13 - encodes a string using rot13
+ * @s: input string.
+ * Return: the pointer to dest.
  */
+
 char *rot13(char *s)
 {
-	char part1[52] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ";
-		char part2[52] = "nNoOpPqQrRsStTuUvVwWxXyYzZaAbBcCdDeEfFgGhHiIjJkKlLmM";
-		int i;
-		int j = 0;
+	int count = 0, i;
+	char alphabet[] = 
+		"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char rot13[] = 
+		"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-		for (i = 0; s[i] != '\0'; i++)
+	while (*(s + count) != '\0')
+	{
+		for (i = 0; i < 52; i++)
 		{
-			for (j = 0; part1[j] != '\0'; i++)
+			if (*(s + count) == alphabet[i])
 			{
-				if (s[i] == part1[j])
-				{
-					s[i] = part2[j];
-					break;
-				}
+				*(s + count) = rot13[i];
+				break;
 			}
 		}
-		return (s);
+		count++;
+	}
+
+	return (s);
 }

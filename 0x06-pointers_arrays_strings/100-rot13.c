@@ -6,12 +6,12 @@
  * Return: the pointer to dest.
  */
 
-char *rot13(char *)
+char *rot13(char *s)
 {
 	int count = 0, i;
-	char alphabet[] = 
+	char alphabet[] =
 		"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char rot13[] = 
+	char rot13[] =
 		"nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
 	while (*(s + count) != '\0')

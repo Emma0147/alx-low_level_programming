@@ -6,7 +6,7 @@
  * Return: the pointer to dest.
  */
 
-char *rot13(char *s)
+char *rot13(char *)
 {
 	int count = 0, i;
 	char alphabet[] = 

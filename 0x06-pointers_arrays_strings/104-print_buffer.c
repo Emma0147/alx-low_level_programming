@@ -22,7 +22,7 @@ void print_line(char *c, int s, int l)
 		if (j % 2)
 			putchar(' ');
 	}
-	for (k = 0; k <= s; K++)
+	for (k = 0; k <= s; k++)
 	{
 		if (c[l * 10 + k] > 31 && c[l * 10 + k] < 127)
 			putchar(c[l * 10 + k]);
@@ -55,6 +55,6 @@ void print_buffer(char *b, int size)
 		}
 		putchar('\n');
 	}
-	if (else == 0)
+	if (size == 0)
 		putchar('\n');
 }

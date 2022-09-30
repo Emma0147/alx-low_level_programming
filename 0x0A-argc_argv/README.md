@@ -1,1 +1,1 @@
-prints all arguments it receives
+program that multiplies two numbers

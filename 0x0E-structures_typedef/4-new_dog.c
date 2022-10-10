@@ -2,59 +2,52 @@
 #include <stdlib.h>
 
 /**
- * new_dog - new element of type struct dog
+ * new_dog - function that create a new dog
  *
- * @name: name of new dog
- * @age: age of new dog
- * @owner: owner of new dog
- * Return: new struct dog
+ * @name: char string name
+ *
+ * @age: int age
+ *
+ * @owner: char string owner
+ *
+ * Return: returns pointer to new dog
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *new_dog;
-	char *dog_name, *dog_owner;
+	struct dog *doge;
+	int i, j, k;
+	char *n, *o;
 
-	new_dog = malloc(sizeof(dog_t));
-	if (new_dog == NULL)
-		return (new_dog);
-	dog_name = malloc(sizeof(name));
-	if (dog_name == NULL)
+	doge = malloc(sizeof(struct dog));
+	if (doge == NULL)
+		return (NULL);
+
+	for (i = 0; name[i] != '\0'; i++)
+		;
+	for (j = 0; owner[j] != '\0'; j++)
+		;
+
+	n = malloc(sizeof(char) * i + 1);
+	if (n == NULL)
 	{
-		free(new_dog);
+		free(doge);
 		return (NULL);
 	}
-	dog_owner = malloc(sizeof(owner));
-	if (dog_owner == NULL)
+	o = malloc(sizeof(char) * j + 1);
+	if (o == NULL)
 	{
-		free(dog_name);
-		free(new_dog);
+		free(n);
+		free(doge);
 		return (NULL);
 	}
-	_strcpy(dog_name, name);
-	_strcpy(dog_owner, owner);
-	new_dog->name = dog_name;
-	new_dog->owner = dog_owner;
-	new_dog->age = age;
-	return (new_dog);
-}
+	for (k = 0; k <= i; k++)
+		n[k] = name[k];
+	for (k = 0; k <= j; k++)
+		o[k] = owner[k];
 
-/**
- * *_strcpy - copies string to given memory location
- * @dest: where the string needs to be copied
- * @src: where the string is
- *
- * Return: char
- */
-char *_strcpy(char *dest, char *src)
-{
-	int len = 0;
+	doge->name = n;
+	doge->age = age;
+	doge->owner = o;
 
-	while (*(src + len) != '\0')
-	{
-		*(dest + len) = *(src + len);
-		len++;
-	}
-	*(dest + len) = *(src + len);
-
-	return (dest);
+	return (doge);
 }

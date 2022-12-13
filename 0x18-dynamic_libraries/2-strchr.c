@@ -7,13 +7,24 @@
  * @c: character to search for
  * Return: pointer to first occurence of c if it's there or NULL otherwise
  */
+
 char *_strchr(char *s, char c)
 {
-	do {
-		if (*s == c)
+	while (*s != '\0') /*Declaring WHILE*/
+	{
+		if (*s == c) /*if s ==  c*/
 		{
-			return (s);
+			return (s); /*return s*/
 		}
-	} while (*s++);
-	return (NULL);
+
+		++s;
+	}
+
+	if (*s == c)
+	{
+		return (s);
+	}
+
+
+	return (0);/* values null*/
 }
